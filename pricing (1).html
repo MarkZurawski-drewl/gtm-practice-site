@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pricing — Kestrel Ops</title>
+<link rel="stylesheet" href="style.css">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K2WZMRNS');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2WZMRNS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <span class="brand">Kestrel Ops</span>
+  <a href="index.html">Home</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Get a Quote</a>
+</nav>
+
+<main>
+  <h1>Simple pricing, no surprises</h1>
+  <p class="lead">Pick the plan that fits your team today — every plan can grow with you.</p>
+
+  <div class="tiers">
+    <div class="tier">
+      <h2>Small Business</h2>
+      <div class="price">$49<span style="font-size:14px;color:#999;">/mo</span></div>
+      <ul>
+        <li>Up to 5 users</li>
+        <li>Core integrations</li>
+        <li>Email support</li>
+      </ul>
+      <a href="contact.html?tier=small-business" class="btn select-plan" data-tier="Small Business">Select Plan</a>
+    </div>
+
+    <div class="tier">
+      <h2>Medium Business</h2>
+      <div class="price">$149<span style="font-size:14px;color:#999;">/mo</span></div>
+      <ul>
+        <li>Up to 25 users</li>
+        <li>Advanced integrations</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="contact.html?tier=medium-business" class="btn select-plan" data-tier="Medium Business">Select Plan</a>
+    </div>
+
+    <div class="tier">
+      <h2>Enterprise</h2>
+      <div class="price">Custom</div>
+      <ul>
+        <li>Unlimited users</li>
+        <li>Dedicated success manager</li>
+        <li>SSO / custom contracts</li>
+      </ul>
+      <a href="contact.html?tier=enterprise" class="btn select-plan" data-tier="Enterprise">Select Plan</a>
+    </div>
+  </div>
+</main>
+
+<footer>Kestrel Ops — practice/demo site, not a real company.</footer>
+
+<script>
+  // Each "Select Plan" button pushes a dataLayer event with the
+  // chosen tier BEFORE navigating to the contact page — a realistic
+  // pattern for capturing plan-selection intent as its own trackable
+  // event, separate from whatever happens on the next page.
+  document.querySelectorAll('.select-plan').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'plan_selected',
+        plan_tier: btn.getAttribute('data-tier')
+      });
+    });
+  });
+</script>
+</body>
+</html>
